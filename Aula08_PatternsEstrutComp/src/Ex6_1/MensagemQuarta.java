@@ -1,0 +1,13 @@
+package Ex6_1;
+
+/**
+ * 
+ * @author Accel Gustavo Araújo Rocha RA:81616654 - SIN3AN-MCA
+ *
+ */
+
+public class MensagemQuarta implements MensagemDoDia {
+	public void imprimir() {
+		System.out.println("Hoje é quarta-feira.");
+	}
+}

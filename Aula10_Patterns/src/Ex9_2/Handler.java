@@ -1,0 +1,48 @@
+package Ex9_2;
+
+import Ex9_2.Handler;
+
+/**
+ * 
+ * @author Accel Gustavo Araújo Rocha RA:81616654 - SIN3AN-MCA
+ *
+ */
+
+public class Handler {
+	private Handler handler;
+	private String nome;
+	private long lastProcess;
+	
+	public void processa() {
+		long newTime = System.currentTimeMillis();
+		if (newTime - this.lastProcess < 3) {
+			System.out.println("** Handler "+nome+" ocupado. Enviando para Handler "+this.handler.getNome());
+			this.handler.processa();
+		}else {
+			this.lastProcess = newTime;
+			System.out.println("-- Handler "+nome+" processou.");
+		}
+	};
+	
+	public void setHandler(Handler handler) {
+		this.handler = handler;
+	}
+	
+	public String getNome() {
+		return this.nome;
+	}
+
+	public Handler(String nome) {
+		super();
+		this.nome = nome;
+	}
+
+	public Handler(Handler handler, String nome) {
+		super();
+		this.handler = handler;
+		this.nome = nome;
+	}
+	
+	
+	
+}
